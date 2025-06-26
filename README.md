@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+📋Task Requirements
 
-## Getting Started
+1. Set Up the Project
+   Use create-next-app or npx create-next-app@latest
 
-First, run the development server:
+Use the app directory structure (App Router, not Pages Router)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Recommended flags:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+bash
+CopyEdit
+npx create-next-app@latest github-dashboard --app --typescript
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Users Dashboard Page
+   Fetch and display a list of GitHub users from the API
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Show:
 
-## Learn More
+User avatar
 
-To learn more about Next.js, take a look at the following resources:
+Username
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Link to GitHub profile
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Search Bar
+   Add a search input
 
-## Deploy on Vercel
+Filter displayed users by username (client-side) 4. User Detail View
+On click of a user:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Navigate to a dynamic route: /users/[username]
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Fetch user details using the second API
+
+Display:
+
+Name
+
+Bio
+
+Location
+
+Followers
+
+Following
+
+Can be done using a modal or a dedicated page
+
+5. Routing Structure (App Router)
+   Use:
+
+app/layout.tsx
+
+app/page.tsx
+
+app/users/[username]/page.tsx
+
+Include loading.tsx and error.tsx where applicable
+
+6. Loading State
+   Show a loader or skeleton UI while fetching users/details
+7. Responsive UI
+   Make sure the layout looks clean and adjusts across screen sizes
+
+Bonus Features (Optional)
+If time permits:
+Implement infinite scrolling or pagination
+
+Use TailwindCSS for clean and fast styling
+
+Debounce the search input for performance
